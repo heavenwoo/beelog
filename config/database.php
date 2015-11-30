@@ -48,7 +48,7 @@ return [
 
         'sqlite' => [
             'driver'   => 'sqlite',
-            'database' => storage_path('database.sqlite'),
+            'database' => database_path('database.sqlite'),
             'prefix'   => '',
         ],
 
@@ -60,7 +60,7 @@ return [
             'password'  => env('DB_PASSWORD', ''),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
+            'prefix'    => 'bee_',
             'strict'    => false,
         ],
 

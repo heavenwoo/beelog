@@ -16,6 +16,18 @@ class DatabaseSeeder extends Seeder
 
         // $this->call(UserTableSeeder::class);
 
+        \App\User::truncate();
+        factory(\App\User::class, 20)->create();
+
+        \App\Article::truncate();
+        factory(\App\Article::class, 100)->create();
+
+        \App\Comment::truncate();
+        factory(\App\Comment::class, 20)->create();
+
+        \App\Category::truncate();
+        factory(\App\Category::class, 10)->create();
+
         Model::reguard();
     }
 }
