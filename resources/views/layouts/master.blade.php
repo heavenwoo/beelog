@@ -12,8 +12,9 @@
     <title>Carousel Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{{ url('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ url('css/prism.css')}}" rel="stylesheet">
+    <link href="//cdn.bootcss.com/select2/4.0.1-rc.1/css/select2.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="{{ url('css/ie10-viewport-bug-workaround.css')}}" rel="stylesheet">
@@ -46,13 +47,14 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="{{ url('js/vendor/jquery.min.js')}}"><\/script>')</script>
+<script src="//cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+<script>window.jQuery || document.write('<script src="//cdn.bootcss.com/jquery/2.1.4/jquery.js"><\/script>')</script>
 <script src="{{ url('js/bootstrap.min.js')}}"></script>
 <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
 <script src="{{ url('js/holder.min.js')}}"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="{{ url('js/ie10-viewport-bug-workaround.js')}}"></script>
 <script src="{{ url('js/prism.js')}}"></script>
+<script src="//cdn.bootcss.com/select2/4.0.1-rc.1/js/i18n/zh-CN.js"></script>
 </body>
 </html>

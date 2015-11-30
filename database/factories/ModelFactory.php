@@ -31,7 +31,6 @@ $factory->define(App\Article::class, function (Faker\Generator $faker) {
         'intro' => join("\n\n", $faker->paragraphs(mt_rand(1, 1))),
         'author' => $faker->userName,
         'keyword' => $faker->words(3, true),
-        'tags' => $faker->words(4, true),
         'ip' => $faker->ipv4,
         'user_id' => rand(1, 10),
         'content' => join("\n\n", $faker->paragraphs(mt_rand(6, 8))),
@@ -53,5 +52,18 @@ $factory->define(App\Comment::class, function (Faker\Generator $faker) {
 $factory->define(App\Category::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->word,
+    ];
+});
+
+$factory->define(App\Tag::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->toLower($faker->word),
+    ];
+});
+
+$factory->define(App\ArticlesTags::class, function (Faker\Generator $faker) {
+    return [
+        'article_id' => rand(1, 100),
+        'tag_id' => rand(1, 10),
     ];
 });

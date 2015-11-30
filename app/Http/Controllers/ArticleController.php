@@ -20,10 +20,6 @@ class ArticleController extends Controller
     {
         $article = Article::getArticleById($id);
 
-        if ($article === null) {
-            return view('errors.404');//404 error!
-        }
-
         $article = $article->toArray()[0];
 
         return view('post', compact('article'));
@@ -31,6 +27,8 @@ class ArticleController extends Controller
 
     public function test($id)
     {
+        //var_dump(Article::find($id));
+        var_dump(Article::where('id', $id)->get()[0]->comments);die;
         $model = Article::has('comments')->get();
         dd($model);
     }

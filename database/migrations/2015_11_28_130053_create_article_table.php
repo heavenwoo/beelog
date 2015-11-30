@@ -20,7 +20,6 @@ class CreateArticleTable extends Migration
             $table->string('intro');
             $table->string('author', 20);
             $table->string('keyword', 50);
-            $table->string('tags');
             $table->string('ip', 15);
             $table->integer('user_id');
             $table->longText('content');

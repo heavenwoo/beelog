@@ -12,13 +12,13 @@
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img src="http://lorempixel.com/1140/500/?1250" alt="First slide">
+            <img src="http://lorempixel.com/1140/500/?{{rand(1, 9999)}}" alt="First slide">
         </div>
         <div class="item">
-            <img src="http://lorempixel.com/1140/500/?1205" alt="Second slide">
+            <img src="http://lorempixel.com/1140/500/?{{rand(1, 9999)}}" alt="Second slide">
         </div>
         <div class="item">
-            <img src="http://lorempixel.com/1140/500/?1657" alt="Third slide">
+            <img src="http://lorempixel.com/1140/500/?{{rand(1, 9999)}}" alt="Third slide">
         </div>
     </div>
     <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -47,6 +47,12 @@
         @if ($key % 2 == 0)
         <div class="col-md-7">
             <h3 class="featurette-heading"><a href="{{ url('post', $article->id) }}">{{$article->subject}}</a></h3>
+                <span><i class="glyphicon glyphicon-time"></i>{{ $article->created_at->diffForHumans() }}</span>
+        @if($article->tags)
+            @foreach($article->tags as $tag)
+                <span><i class="glyphicon glyphicon-tag"></i>{{ $tag->name }}</span>
+            @endforeach
+        @endif
             <p class="lead">{{nl2br($article->intro)}}</p>
         </div>
         <div class="col-md-5">
@@ -65,14 +71,12 @@
     @endforeach
 
     <hr class="featurette-divider">
-
+@if ($articles->render() != '')
     <div style="text-align: center">
     {!! $articles->render() !!}
     </div>
-
-
     <hr class="featurette-divider">
-
+@endif
     <!-- /END THE FEATURETTES -->
 
 </div><!-- /.container -->
