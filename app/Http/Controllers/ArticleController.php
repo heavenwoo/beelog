@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\User;
 
-use App\Http\Requests;
+use Request;
 
 class ArticleController extends Controller
 {
@@ -20,9 +20,17 @@ class ArticleController extends Controller
     {
         $article = Article::getArticleById($id);
 
-        $article = $article->toArray()[0];
-
         return view('post', compact('article'));
+    }
+
+    public function create()
+    {
+        return view('create');
+    }
+
+    public function store()
+    {
+        dd(Request::all());
     }
 
     public function test($id)

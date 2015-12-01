@@ -13,8 +13,17 @@
 
 Route::get('/', 'ArticleController@index');
 
-Route::get('post/{id}', 'ArticleController@show');
+Route::get('post/{id}', 'ArticleController@show')->where('id', '[0-9]+');
 
-Route::get('user/{id}', 'UserController@show');
+Route::get('user/{id}', 'UserController@show')->where('id', '[0-9]+');
 
 Route::get('test/{id?}', 'ArticleController@test');
+
+Route::get('post/create', 'ArticleController@create');
+
+Route::post('post/store', 'ArticleController@store');
+
+Route::get('admin', function()
+{
+    return view('admin.login');
+});

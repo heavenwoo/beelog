@@ -53,9 +53,9 @@ class Article extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function users()
+    public function user()
     {
-        return $this->hasOne('App\User');
+        return $this->belongsTo('App\User');
     }
 
     /**
@@ -69,9 +69,9 @@ class Article extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function categories()
+    public function category()
     {
-        return $this->hasOne('App\Category', 'id', 'category_id');
+        return $this->belongsTo('App\Category');
     }
 
     /**
@@ -80,33 +80,10 @@ class Article extends Model
      */
     public static function getNewArticles($paginate = 10)
     {
-        return static::getArticles(0, $paginate);
-    }
-
-    /**
-     * @param bool|false $id
-     * @param int        $paginate
-     * @return object
-     */
-    public static function getArticles($id = 0, $paginate = 10)
-    {
-        $select = [
-            'articles.*',
-            'categories.name as category_name',
-            'users.name as user_name',
-        ];
-
-        $article = static::select($select)
-            ->leftJoin('categories', 'categories.id', '=', 'articles.category_id')
-            ->leftJoin('users', 'users.id', '=', 'articles.user_id');
-
-        if ($id === 0) {
-            return $article->orderBy('articles.created_at', 'desc')
-                ->orderBy('articles.id', 'desc')
-                ->paginate($paginate);
-        } else {
-            return $article->where('articles.id', $id)->get();
-        }
+        return static::with('category', 'user', 'tags')
+            ->where('published', 'published')
+            ->orderBy('created_at', 'desc')
+            ->simplePaginate($paginate);
     }
 
     /**
@@ -115,8 +92,6 @@ class Article extends Model
      */
     public static function getArticleById($id)
     {
-        Cache::put('xx', 'oo', Carbon::now()->addMinutes(10));
-        $find = static::find($id);
-        return $find ? static::getArticles($id) : null;
+        return static::findOrFail($id)->load('user', 'comments');
     }
 }

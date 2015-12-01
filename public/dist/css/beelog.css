@@ -1,0 +1,1004 @@
+/*!
+ * Flat UI Free v2.2.0 (http://designmodo.github.io/Flat-UI/)
+ * Copyright 2013-2014 Designmodo, Inc.
+ */
+
+/* Prettyfy Theme */
+.prettyprint {
+    padding: 15px 21px;
+    font-family: Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Consolas, monospace;
+    background-color: #f7f7f9;
+    border: 2px solid #e1e1e8;
+}
+.pln {
+    color: #333;
+}
+@media screen {
+    .str {
+        color: #d14;
+    }
+    .kwd {
+        color: #333;
+    }
+    .com {
+        color: #998;
+    }
+    .typ {
+        color: #458;
+    }
+    .lit {
+        color: #458;
+    }
+    .pun {
+        color: #333;
+    }
+    .opn {
+        color: #333;
+    }
+    .clo {
+        color: #333;
+    }
+    .tag {
+        color: navy;
+    }
+    .atn {
+        color: teal;
+    }
+    .atv {
+        color: #d14;
+    }
+    .dec {
+        color: #333;
+    }
+    .var {
+        color: teal;
+    }
+    .fun {
+        color: #900;
+    }
+}
+@media print, projection {
+    .str {
+        color: #060;
+    }
+    .kwd {
+        font-weight: bold;
+        color: #006;
+    }
+    .com {
+        font-style: italic;
+        color: #600;
+    }
+    .typ {
+        font-weight: bold;
+        color: #404;
+    }
+    .lit {
+        color: #044;
+    }
+    .pun,
+    .opn,
+    .clo {
+        color: #440;
+    }
+    .tag {
+        font-weight: bold;
+        color: #006;
+    }
+    .atn {
+        color: #404;
+    }
+    .atv {
+        color: #060;
+    }
+}
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.demo-headline {
+    padding: 73px 0 110px;
+    text-align: center;
+}
+.demo-logo {
+    margin: 10px 0;
+    font: 900 90px/100px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: -2px;
+}
+.demo-logo .logo {
+    width: 236px;
+    height: 181px;
+    margin: 0 auto 26px;
+    overflow: hidden;
+    text-indent: -9999em;
+    background: url(../img/demo/logo-mask.png) center 0 no-repeat;
+    background-size: 236px 181px;
+}
+.demo-logo small {
+    display: block;
+    padding-top: 5px;
+    font-size: 22px;
+    font-weight: 700;
+    color: rgba(52, 73, 94, .3);
+    letter-spacing: 0;
+}
+.demo-row {
+    margin-bottom: 20px;
+}
+.demo-row .demo-heading-note,
+.demo-row .demo-text-note {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    display: block;
+    width: 260px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 13px;
+    color: #c0c1c2;
+}
+.demo-row .demo-text-note {
+    top: 10px;
+    bottom: auto;
+}
+.demo-row.typography-row .demo-content {
+    float: none;
+    width: auto;
+    clear: both;
+}
+.demo-row.typography-row .demo-type-example {
+    position: relative;
+    padding-left: 25%;
+    margin-bottom: 40px;
+}
+.demo-section-title {
+    margin: 10px 0;
+    font: 900 32px/40px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.demo-panel-title {
+    padding-top: 20px;
+    margin: 2px 0 20px;
+    font: bold 23px/40px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.demo-panel-title small {
+    font-size: inherit;
+    font-weight: 400;
+    color: #798795;
+}
+.demo-navigation {
+    margin-top: -10px;
+    margin-bottom: -4px;
+}
+.demo-pager {
+    margin-top: -20px;
+}
+.demo-tooltips {
+    height: 126px;
+}
+.demo-tooltips .tooltip {
+    position: relative !important;
+    top: -8px !important;
+    left: -8px !important;
+}
+.demo-headings {
+    margin-bottom: 12px;
+}
+.demo-tiles {
+    margin-bottom: 46px;
+}
+.demo-icons {
+    padding-left: 20px;
+    margin-left: -20px;
+    font-size: 32px;
+}
+.demo-icons .demo-content {
+    margin: 0 0 0 -35px;
+}
+.demo-icons .demo-content > span {
+    display: inline-block;
+    width: 24px;
+    margin: 0 0 32px 35px;
+    font-size: 24px;
+}
+.demo-icons-tooltip {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    width: 80px;
+    margin-left: 0 !important;
+    font-size: 12px;
+    color: #c2c8cf;
+}
+.demo-illustrations .demo-content {
+    padding-top: 20px;
+    margin: 0 0 0 -40px;
+}
+.demo-illustrations .demo-content:before,
+.demo-illustrations .demo-content:after {
+    display: table;
+    content: " ";
+}
+.demo-illustrations .demo-content:after {
+    clear: both;
+}
+.demo-illustrations .demo-content > div {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 0 0 40px 40px;
+    line-height: 100px;
+    text-align: center;
+}
+.demo-illustrations img {
+    display: inline-block;
+    max-width: 100px;
+    max-height: 100px;
+    vertical-align: middle;
+}
+.demo-samples {
+    margin-bottom: 46px;
+}
+.demo-download-section {
+    float: none;
+    padding: 60px 0 90px 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+.demo-download-section [class*='fui-'] {
+    margin: 3px 0 -3px;
+}
+.demo-download {
+    width: 190px;
+    height: 190px;
+    padding: 40px 28px 30px 32px;
+    margin: 0 auto 32px;
+    text-align: center;
+    background-color: #ebedef;
+    border-radius: 50%;
+}
+.demo-download img {
+    width: 82px;
+    height: 104px;
+}
+.demo-download-text {
+    padding: 20px 0;
+    font-size: 15px;
+    text-align: center;
+}
+.demo-text-box a:hover {
+    color: #1abc9c;
+}
+.demo-browser {
+    padding-top: 42px;
+    margin: 0 41px 140px 0;
+    color: #fff;
+    background: #2c3e50 url(../img/demo/browser.png) 0 0 no-repeat;
+    background-size: 659px 42px;
+    border-radius: 0 0 6px 6px;
+}
+.demo-browser-side {
+    float: left;
+    width: 151px;
+    padding: 22px 20px;
+}
+.demo-browser-side > h5 {
+    margin-top: 4px;
+    margin-bottom: 3px;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: none;
+}
+.demo-browser-side > h6 {
+    margin-top: 3px;
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 18px;
+    text-transform: none;
+
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+.demo-browser-author {
+    display: block;
+    width: 84px;
+    height: 84px;
+    margin: 0 auto;
+    background: url(../img/demo/browser-author.jpg) center no-repeat;
+    border: 3px solid #fff;
+    border-radius: 50%;
+}
+.demo-browser-action {
+    padding: 30px 0 12px;
+}
+.demo-browser-action > .btn {
+    padding: 7px 0 8px 11px !important;
+    text-align: left;
+    border-radius: 3px;
+}
+.demo-browser-action > .btn > [class^="fui-"] {
+    position: relative;
+    top: 1px;
+    margin-right: 12px;
+}
+.demo-browser-content {
+    padding: 21px 0 0 20px;
+    overflow: hidden;
+    background-color: #34495e;
+    border-radius: 0 0 6px;
+}
+.demo-browser-content > img {
+    float: left;
+    width: 146px;
+    margin: 0 15px 20px 0;
+    border: 6px solid #fff;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 2) {
+    .logo {
+        background-image: url(../img/demo/logo-mask-2x.png);
+    }
+    .demo-browser {
+        background-image: url(../img/demo/browser-2x.png);
+    }
+}
+.demo-swatches-row [class*="col"] {
+    float: left;
+    min-height: 1px;
+}
+.demo-swatches-row .swatches-col {
+    width: 800px;
+    margin-left: -5px;
+}
+.demo-swatches-row .swatches-desc-col {
+    width: 140px;
+    margin-left: 20px;
+}
+
+
+.carousel-control {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    font-size: 20px;
+    color: #1ABC9C;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+    background-color: rgba(0, 0, 0, 0);
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+.carousel-control.left {
+    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, .5) 0%, rgba(255, 255, 255, .0001) 100%);
+    background-image:      -o-linear-gradient(left, rgba(255, 255, 255, .5) 0%, rgba(255, 255, 255, .0001) 100%);
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, .5)), to(rgba(255, 255, 255, .0001)));
+    background-image:         linear-gradient(to right, rgba(255, 255, 255, .5) 0%, rgba(255, 255, 255, .0001) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+    background-repeat: repeat-x;
+}
+.carousel-control.right {
+    right: 0;
+    left: auto;
+    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, .0001) 0%, rgba(255, 255, 255, .5) 100%);
+    background-image:      -o-linear-gradient(left, rgba(255, 255, 255, .0001) 0%, rgba(255, 255, 255, .5) 100%);
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, .0001)), to(rgba(255, 255, 255, .5)));
+    background-image:         linear-gradient(to right, rgba(255, 255, 255, .0001) 0%, rgba(255, 255, 255, .5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+    background-repeat: repeat-x;
+}
+.carousel-control:hover,
+.carousel-control:focus {
+    color: #16A085;
+    text-decoration: none;
+    filter: alpha(opacity=90);
+    outline: 0;
+    opacity: .9;
+}
+
+
+
+.pagination {
+    position: relative;
+    display: block;
+    background: #d6dbdf;
+    color: #ffffff;
+    padding: 0;
+    display: inline-block;
+    border-radius: 6px;
+    word-spacing: -0.5px;
+}
+@media (min-width: 768px) {
+    .pagination {
+        display: inline-block;
+    }
+}
+@media (max-width: 767px) {
+    .pagination {
+        height: 41px;
+        padding: 0 55px 0 52px;
+        overflow: auto;
+        white-space: nowrap;
+        border-radius: 6px;
+    }
+}
+.pagination li {
+    display: inline-block;
+    margin-right: -2px;
+    vertical-align: middle;
+    word-spacing: normal;
+}
+.pagination li a {
+    position: static;
+}
+.pagination li.active > a,
+.pagination li.active > span {
+    background-color: #1abc9c;
+    color: #ffffff;
+    border-color: #dfe2e5;
+}
+.pagination li.active > a,
+.pagination li.active > span,
+.pagination li.active > a:hover,
+.pagination li.active > span:hover,
+.pagination li.active > a:focus,
+.pagination li.active > span:focus {
+    background-color: #1abc9c;
+    color: #ffffff;
+    border-color: #dfe2e5;
+}
+.pagination li.active.previous > a,
+.pagination li.active.next > a,
+.pagination li.active.previous > span,
+.pagination li.active.next > span {
+    margin: 0;
+}
+.pagination li.active.previous > a,
+.pagination li.active.next > a,
+.pagination li.active.previous > span,
+.pagination li.active.next > span,
+.pagination li.active.previous > a:hover,
+.pagination li.active.next > a:hover,
+.pagination li.active.previous > span:hover,
+.pagination li.active.next > span:hover,
+.pagination li.active.previous > a:focus,
+.pagination li.active.next > a:focus,
+.pagination li.active.previous > span:focus,
+.pagination li.active.next > span:focus {
+    background-color: #1abc9c;
+    color: #ffffff;
+}
+.pagination li:first-child > a,
+.pagination li:first-child > span {
+    border-radius: 6px 0 0 6px;
+    border-left: none;
+}
+.pagination li:first-child.previous + li > a,
+.pagination li:first-child.previous + li > span {
+    border-left-width: 0;
+}
+.pagination li:last-child {
+    margin-right: 0;
+}
+.pagination li:last-child > a,
+.pagination li:last-child > span,
+.pagination li:last-child > a:hover,
+.pagination li:last-child > span:hover,
+.pagination li:last-child > a:focus,
+.pagination li:last-child > span:focus {
+    border-radius: 0 6px 6px 0;
+}
+.pagination li.previous > a,
+.pagination li.next > a,
+.pagination li.previous > span,
+.pagination li.next > span {
+    border-right: 2px solid #e4e7ea;
+    font-size: 16px;
+    min-width: auto;
+    padding: 12px 17px;
+    background-color: transparent;
+}
+.pagination li.next > a,
+.pagination li.next > span {
+    border-right: none;
+}
+.pagination li.disabled > a,
+.pagination li.disabled > span {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-right-color: #dfe2e5;
+    cursor: not-allowed;
+}
+.pagination li.disabled > a:hover,
+.pagination li.disabled > span:hover,
+.pagination li.disabled > a:focus,
+.pagination li.disabled > span:focus,
+.pagination li.disabled > a:active,
+.pagination li.disabled > span:active {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+}
+@media (max-width: 767px) {
+    .pagination li.next,
+    .pagination li.previous {
+        background-color: #d6dbdf;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 10;
+        border-radius: 0 6px 6px 0;
+    }
+    .pagination li.previous {
+        left: 0;
+        right: auto;
+        border-radius: 6px 0 0 6px;
+    }
+}
+.pagination li > a,
+.pagination li > span {
+    display: inline-block;
+    background: transparent;
+    border: none;
+    border-left: 2px solid #e4e7ea;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 16px;
+    min-height: 41px;
+    min-width: 41px;
+    outline: none;
+    padding: 12px 10px;
+    text-align: center;
+    -webkit-transition: 0.25s ease-out;
+    transition: 0.25s ease-out;
+}
+.pagination li > a:hover,
+.pagination li > span:hover,
+.pagination li > a:focus,
+.pagination li > span:focus {
+    background-color: #1abc9c;
+    color: #ffffff;
+}
+.pagination li > a:active,
+.pagination li > span:active {
+    background-color: #1abc9c;
+    color: #ffffff;
+}
+.pagination > .btn.previous,
+.pagination > .btn.next {
+    margin-right: 8px;
+    font-size: 14px;
+    line-height: 1.429;
+    padding-left: 23px;
+    padding-right: 23px;
+}
+.pagination > .btn.previous [class*="fui-"],
+.pagination > .btn.next [class*="fui-"] {
+    font-size: 16px;
+    margin-left: -2px;
+    margin-top: -2px;
+}
+.pagination > .btn.next {
+    margin-left: 8px;
+    margin-right: 0;
+}
+.pagination > .btn.next [class*="fui-"] {
+    margin-right: -2px;
+    margin-left: 4px;
+}
+@media (max-width: 767px) {
+    .pagination > .btn {
+        display: block;
+        margin: 0;
+        width: 50%;
+    }
+    .pagination > .btn:first-child {
+        border-bottom: 2px solid #dfe2e5;
+        border-radius: 6px 0 0;
+    }
+    .pagination > .btn:first-child.btn-primary {
+        border-bottom-color: #48c9b0;
+    }
+    .pagination > .btn:first-child.btn-danger {
+        border-bottom-color: #ec7063;
+    }
+    .pagination > .btn:first-child.btn-warning {
+        border-bottom-color: #f4d03f;
+    }
+    .pagination > .btn:first-child.btn-success {
+        border-bottom-color: #58d68d;
+    }
+    .pagination > .btn:first-child.btn-info {
+        border-bottom-color: #5dade2;
+    }
+    .pagination > .btn:first-child.btn-inverse {
+        border-bottom-color: #5d6d7e;
+    }
+    .pagination > .btn:first-child > [class*="fui"] {
+        margin-left: -20px;
+    }
+    .pagination > .btn + ul {
+        padding: 0;
+        text-align: center;
+        border-radius: 0 0 6px 6px;
+    }
+    .pagination > .btn + ul + .btn {
+        border-bottom: 2px solid #dfe2e5;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border-radius: 0 6px 0 0;
+    }
+    .pagination > .btn + ul + .btn.btn-primary {
+        border-bottom-color: #48c9b0;
+    }
+    .pagination > .btn + ul + .btn.btn-danger {
+        border-bottom-color: #ec7063;
+    }
+    .pagination > .btn + ul + .btn.btn-warning {
+        border-bottom-color: #f4d03f;
+    }
+    .pagination > .btn + ul + .btn.btn-success {
+        border-bottom-color: #58d68d;
+    }
+    .pagination > .btn + ul + .btn.btn-info {
+        border-bottom-color: #5dade2;
+    }
+    .pagination > .btn + ul + .btn.btn-inverse {
+        border-bottom-color: #5d6d7e;
+    }
+    .pagination > .btn + ul + .btn > [class*="fui"] {
+        margin-right: -20px;
+    }
+    .pagination ul {
+        display: block;
+    }
+    .pagination ul > li > a {
+        border-radius: 0;
+    }
+}
+.pagination-danger {
+    background-color: #e74c3c;
+}
+.pagination-danger li.previous > a {
+    border-right-color: #ef897e;
+}
+.pagination-danger li > a,
+.pagination-danger li > span {
+    border-left-color: #ef897e;
+}
+.pagination-danger li > a:hover,
+.pagination-danger li > span:hover,
+.pagination-danger li > a:focus,
+.pagination-danger li > span:focus {
+    border-left-color: #ef897e;
+    background-color: #ec7063;
+}
+.pagination-danger li > a:active,
+.pagination-danger li > span:active {
+    background-color: #c44133;
+}
+.pagination-danger li.active > a,
+.pagination-danger li.active > span {
+    border-left-color: #ef897e;
+    background-color: #c44133;
+}
+.pagination-danger li.active > a:hover,
+.pagination-danger li.active > span:hover,
+.pagination-danger li.active > a:focus,
+.pagination-danger li.active > span:focus {
+    border-left-color: #ef897e;
+    background-color: #ec7063;
+}
+.pagination-success {
+    background-color: #2ecc71;
+}
+.pagination-success li.previous > a {
+    border-right-color: #75dda1;
+}
+.pagination-success li > a,
+.pagination-success li > span {
+    border-left-color: #75dda1;
+}
+.pagination-success li > a:hover,
+.pagination-success li > span:hover,
+.pagination-success li > a:focus,
+.pagination-success li > span:focus {
+    border-left-color: #75dda1;
+    background-color: #58d68d;
+}
+.pagination-success li > a:active,
+.pagination-success li > span:active {
+    background-color: #27ad60;
+}
+.pagination-success li.active > a,
+.pagination-success li.active > span {
+    border-left-color: #75dda1;
+    background-color: #27ad60;
+}
+.pagination-success li.active > a:hover,
+.pagination-success li.active > span:hover,
+.pagination-success li.active > a:focus,
+.pagination-success li.active > span:focus {
+    border-left-color: #75dda1;
+    background-color: #58d68d;
+}
+.pagination-warning {
+    background-color: #f1c40f;
+}
+.pagination-warning li.previous > a {
+    border-right-color: #f6d861;
+}
+.pagination-warning li > a,
+.pagination-warning li > span {
+    border-left-color: #f6d861;
+}
+.pagination-warning li > a:hover,
+.pagination-warning li > span:hover,
+.pagination-warning li > a:focus,
+.pagination-warning li > span:focus {
+    border-left-color: #f6d861;
+    background-color: #f4d313;
+}
+.pagination-warning li > a:active,
+.pagination-warning li > span:active {
+    background-color: #cda70d;
+}
+.pagination-warning li.active > a,
+.pagination-warning li.active > span {
+    border-left-color: #f6d861;
+    background-color: #cda70d;
+}
+.pagination-warning li.active > a:hover,
+.pagination-warning li.active > span:hover,
+.pagination-warning li.active > a:focus,
+.pagination-warning li.active > span:focus {
+    border-left-color: #f6d861;
+    background-color: #f4d313;
+}
+.pagination-info {
+    background-color: #3498db;
+}
+.pagination-info li.previous > a {
+    border-right-color: #79bbe7;
+}
+.pagination-info li > a,
+.pagination-info li > span {
+    border-left-color: #79bbe7;
+}
+.pagination-info li > a:hover,
+.pagination-info li > span:hover,
+.pagination-info li > a:focus,
+.pagination-info li > span:focus {
+    border-left-color: #79bbe7;
+    background-color: #5dade2;
+}
+.pagination-info li > a:active,
+.pagination-info li > span:active {
+    background-color: #2c81ba;
+}
+.pagination-info li.active > a,
+.pagination-info li.active > span {
+    border-left-color: #79bbe7;
+    background-color: #2c81ba;
+}
+.pagination-info li.active > a:hover,
+.pagination-info li.active > span:hover,
+.pagination-info li.active > a:focus,
+.pagination-info li.active > span:focus {
+    border-left-color: #79bbe7;
+    background-color: #5dade2;
+}
+.pagination-inverse {
+    background-color: #34495e;
+}
+.pagination-inverse li.previous > a {
+    border-right-color: #798795;
+}
+.pagination-inverse li > a,
+.pagination-inverse li > span {
+    border-left-color: #798795;
+}
+.pagination-inverse li > a:hover,
+.pagination-inverse li > span:hover,
+.pagination-inverse li > a:focus,
+.pagination-inverse li > span:focus {
+    border-left-color: #798795;
+    background-color: #415b76;
+}
+.pagination-inverse li > a:active,
+.pagination-inverse li > span:active {
+    background-color: #2c3e50;
+}
+.pagination-inverse li.active > a,
+.pagination-inverse li.active > span {
+    border-left-color: #798795;
+    background-color: #2c3e50;
+}
+.pagination-inverse li.active > a:hover,
+.pagination-inverse li.active > span:hover,
+.pagination-inverse li.active > a:focus,
+.pagination-inverse li.active > span:focus {
+    border-left-color: #798795;
+    background-color: #415b76;
+}
+.pagination-minimal > li:first-child {
+    border-radius: 6px 0 0 6px;
+}
+.pagination-minimal > li:first-child.previous + li > a,
+.pagination-minimal > li:first-child.previous + li > span {
+    border-left-width: 5px;
+}
+.pagination-minimal > li:last-child {
+    border-radius: 0 6px 6px 0;
+}
+.pagination-minimal > li.previous > a,
+.pagination-minimal > li.next > a,
+.pagination-minimal > li.previous > span,
+.pagination-minimal > li.next > span {
+    background: transparent;
+    border: none;
+    border-right: 2px solid #e4e7ea;
+    margin: 0 9px 0 0;
+    padding: 12px 17px;
+    border-radius: 6px 0 0 6px;
+}
+.pagination-minimal > li.previous > a,
+.pagination-minimal > li.next > a,
+.pagination-minimal > li.previous > span,
+.pagination-minimal > li.next > span,
+.pagination-minimal > li.previous > a:hover,
+.pagination-minimal > li.next > a:hover,
+.pagination-minimal > li.previous > span:hover,
+.pagination-minimal > li.next > span:hover,
+.pagination-minimal > li.previous > a:focus,
+.pagination-minimal > li.next > a:focus,
+.pagination-minimal > li.previous > span:focus,
+.pagination-minimal > li.next > span:focus {
+    border-color: #e4e7ea !important;
+}
+@media (max-width: 767px) {
+    .pagination-minimal > li.previous > a,
+    .pagination-minimal > li.next > a,
+    .pagination-minimal > li.previous > span,
+    .pagination-minimal > li.next > span {
+        margin-right: 0;
+    }
+}
+.pagination-minimal > li.next {
+    margin-left: 9px;
+}
+.pagination-minimal > li.next > a,
+.pagination-minimal > li.next > span {
+    border-left: 2px solid #e4e7ea;
+    border-right: none;
+    margin: 0;
+    border-radius: 0 6px 6px 0;
+}
+.pagination-minimal > li.active > a,
+.pagination-minimal > li.active > span {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    border-width: 2px !important;
+    color: #d6dbdf;
+    margin: 10px 5px 9px;
+}
+.pagination-minimal > li.active > a:hover,
+.pagination-minimal > li.active > span:hover,
+.pagination-minimal > li.active > a:focus,
+.pagination-minimal > li.active > span:focus {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #d6dbdf;
+}
+.pagination-minimal > li.active.previous,
+.pagination-minimal > li.active.next {
+    border-color: #e4e7ea;
+}
+.pagination-minimal > li.active.previous {
+    margin-right: 6px;
+}
+.pagination-minimal > li > a,
+.pagination-minimal > li > span {
+    background: #ffffff;
+    border: 5px solid #d6dbdf;
+    color: #ffffff;
+    line-height: 16px;
+    margin: 7px 2px 6px;
+    min-width: 0;
+    min-height: 16px;
+    padding: 0 4px;
+    border-radius: 50px;
+    background-clip: padding-box;
+    -webkit-transition: background 0.2s ease-out, border-color 0s ease-out, color 0.2s ease-out;
+    transition: background 0.2s ease-out, border-color 0s ease-out, color 0.2s ease-out;
+}
+.pagination-minimal > li > a:hover,
+.pagination-minimal > li > span:hover,
+.pagination-minimal > li > a:focus,
+.pagination-minimal > li > span:focus {
+    background-color: #1abc9c;
+    border-color: #1abc9c;
+    color: #ffffff;
+    -webkit-transition: background 0.2s ease-out, border-color 0.2s ease-out, color 0.2s ease-out;
+    transition: background 0.2s ease-out, border-color 0.2s ease-out, color 0.2s ease-out;
+}
+.pagination-minimal > li > a:active,
+.pagination-minimal > li > span:active {
+    background-color: #16a085;
+    border-color: #16a085;
+}
+.pagination-plain {
+    font-size: 16px;
+    font-weight: 700;
+    list-style-type: none;
+    margin: 0 0 20px;
+    padding: 0;
+    height: 57px;
+}
+.pagination-plain > li {
+    display: inline;
+}
+.pagination-plain > li.previous {
+    padding-right: 23px;
+}
+.pagination-plain > li.next {
+    padding-left: 20px;
+}
+.pagination-plain > li.active > a {
+    color: #d3d7da;
+}
+.pagination-plain > li > a {
+    padding: 0 5px;
+}
+@media (max-width: 480px) {
+    .pagination-plain {
+        overflow: hidden;
+        text-align: center;
+    }
+    .pagination-plain > li.previous {
+        display: block;
+        margin-bottom: 10px;
+        text-align: left;
+        width: 50%;
+    }
+    .pagination-plain > li.next {
+        float: right;
+        margin-top: -64px;
+        text-align: right;
+        width: 50%;
+    }
+}
+@media (min-width: 768px) {
+    .pagination-plain {
+        height: auto;
+    }
+}
+.pagination-dropdown ul {
+    min-width: 67px;
+    width: auto;
+    left: 50%;
+    margin-left: -34px;
+}
+.pagination-dropdown ul li {
+    display: block;
+    margin-right: 0;
+}
+.pagination-dropdown ul li:first-child > a,
+.pagination-dropdown ul li:first-child > span {
+    border-radius: 6px 6px 0 0;
+}
+.pagination-dropdown ul li:last-child > a,
+.pagination-dropdown ul li:last-child > span {
+    border-radius: 0 0 6px 6px !important;
+}
+.pagination-dropdown ul li > a,
+.pagination-dropdown ul li > span {
+    border-left: none;
+    display: block;
+    float: none;
+    padding: 8px 10px 7px;
+    text-align: center;
+    min-height: 0;
+}
+.pagination-dropdown.dropup {
+    position: relative;
+}

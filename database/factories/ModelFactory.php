@@ -27,8 +27,8 @@ $factory->define(App\Article::class, function (Faker\Generator $faker) {
     return [
         'category_id' => rand(1, 6),
         'subject' => $faker->sentence(mt_rand(3, 5)),
-        'published' => $faker->randomElement(['published', 'edit', 'ban']),
-        'intro' => join("\n\n", $faker->paragraphs(mt_rand(1, 1))),
+        'published' => $faker->randomElement(['published', 'edit', 'trash']),
+        'intro' => join("\n\n", $faker->paragraphs(mt_rand(1, 2))),
         'author' => $faker->userName,
         'keyword' => $faker->words(3, true),
         'ip' => $faker->ipv4,
@@ -41,9 +41,9 @@ $factory->define(App\Article::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Comment::class, function (Faker\Generator $faker) {
     return [
-        'article_id' => rand(1, 100),
+        'article_id' => rand(1, 200),
         'user_id' => rand(1, 10),
-        'comment' => join("\n\n", $faker->paragraphs(mt_rand(1, 3))),
+        'content' => join("\n\n", $faker->paragraphs(mt_rand(1, 3))),
         'email' => $faker->email,
         'published' => $faker->randomElement(['published', 'edit', 'ban']),
     ];
@@ -63,7 +63,7 @@ $factory->define(App\Tag::class, function (Faker\Generator $faker) {
 
 $factory->define(App\ArticlesTags::class, function (Faker\Generator $faker) {
     return [
-        'article_id' => rand(1, 100),
+        'article_id' => rand(1, 200),
         'tag_id' => rand(1, 10),
     ];
 });

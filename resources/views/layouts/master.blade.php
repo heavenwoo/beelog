@@ -7,54 +7,40 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
 
-    <title>Carousel Template for Bootstrap</title>
+    {!! HTML::style('dist/img/favicon.ico', ['rel' => 'shortcut icon']) !!}
+    <!-- Loading Bootstrap -->
+    {!! HTML::style('dist/css/vendor/bootstrap/css/bootstrap.min.css') !!}
 
-    <!-- Bootstrap core CSS -->
-    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ url('css/prism.css')}}" rel="stylesheet">
-    <link href="//cdn.bootcss.com/select2/4.0.1-rc.1/css/select2.css" rel="stylesheet">
+    <!-- Loading Flat UI -->
+    {!! HTML::style('dist/css/flat-ui.min.css') !!}
+    {!! HTML::style('dist/css/beelog.css') !!}
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="{{ url('css/ie10-viewport-bug-workaround.css')}}" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="{{ url('js/ie-emulation-modes-warning.js')}}"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="dist/js/vendor/html5shiv.js"></script>
+    <script src="dist/js/vendor/respond.min.js"></script>
     <![endif]-->
 
-    <!-- Custom styles for this template -->
-    <link href="{{ url('css/carousel.css') }}" rel="stylesheet">
+    <title>Beelog built with Laravel 5 and Flat UI</title>
+
 </head>
 <body>
-@include('layouts.navbar')
-@yield('content')
-
 <div class="container">
+    @include('layouts.navbar')
+    @yield('content')
+
     <!-- FOOTER -->
     <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2015 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>Proceed in: {{ round((microtime(true) - LARAVEL_START)*1000, 2) }}ms</p>
     </footer>
-
 </div><!-- /.container -->
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="//cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
-<script>window.jQuery || document.write('<script src="//cdn.bootcss.com/jquery/2.1.4/jquery.js"><\/script>')</script>
-<script src="{{ url('js/bootstrap.min.js')}}"></script>
-<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-<script src="{{ url('js/holder.min.js')}}"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="{{ url('js/ie10-viewport-bug-workaround.js')}}"></script>
-<script src="{{ url('js/prism.js')}}"></script>
-<script src="//cdn.bootcss.com/select2/4.0.1-rc.1/js/i18n/zh-CN.js"></script>
+<!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+{!! HTML::script('dist/js/vendor/jquery.min.js') !!}
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+{!! HTML::script('dist/js/vendor/video.js') !!}
+{!! HTML::script('dist/js/flat-ui.min.js') !!}
+{!! HTML::script('dist/js/beelog.js') !!}
 </body>
 </html>
