@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(App\User::class, function (Faker\Generator $faker) {
+$factory->define(Bee\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->email,
@@ -23,7 +23,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Article::class, function (Faker\Generator $faker) {
+$factory->define(Bee\Article::class, function (Faker\Generator $faker) {
     return [
         'category_id' => rand(1, 6),
         'subject' => $faker->sentence(mt_rand(3, 5)),
@@ -39,7 +39,7 @@ $factory->define(App\Article::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Comment::class, function (Faker\Generator $faker) {
+$factory->define(Bee\Comment::class, function (Faker\Generator $faker) {
     return [
         'article_id' => rand(1, 200),
         'user_id' => rand(1, 10),
@@ -49,19 +49,19 @@ $factory->define(App\Comment::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Category::class, function (Faker\Generator $faker) {
+$factory->define(Bee\Category::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->word,
     ];
 });
 
-$factory->define(App\Tag::class, function (Faker\Generator $faker) {
+$factory->define(Bee\Tag::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->toLower($faker->word),
     ];
 });
 
-$factory->define(App\ArticlesTags::class, function (Faker\Generator $faker) {
+$factory->define(Bee\ArticlesTags::class, function (Faker\Generator $faker) {
     return [
         'article_id' => rand(1, 200),
         'tag_id' => rand(1, 10),

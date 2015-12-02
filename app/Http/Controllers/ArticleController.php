@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Bee\Http\Controllers;
 
-use App\Article;
-use App\User;
+use Bee\Article;
+use Bee\Tag;
+use Bee\User;
 
 use Request;
 
@@ -13,7 +14,17 @@ class ArticleController extends Controller
     {
         $articles = Article::getNewArticles(config('blog.posts_per_page'));
 
-        return view('index', compact('articles'));
+        //Fix the Flat UI pagination issue.
+        $paginate = $articles->render();
+        //$paginate = preg_replace('/<li(.+?)><span>&laquo;<\/span><\/li>/i', '<li class="previous disabled"><span class="fui-arrow-left"></span></li>', $paginate);
+        //$paginate = preg_replace('/<li><a href="(.+?)"(.+?)>&laquo;<\/a><\/li>/i', '<li class="previous"><a href="$1" class="fui-arrow-left"></a></li>', $paginate);
+        //$paginate = preg_replace('/<li(.+?)><span>&raquo;<\/span><\/li>/i', '<li class="next disabled"><span class="fui-arrow-right"></span></li>', $paginate);
+        //$paginate = preg_replace('/<li><a href="(.+?)"(.+?)>&raquo;<\/a><\/li>/i', '<li class="next"><a href="$1" class="fui-arrow-right"></a></li>', $paginate);
+        //$paginate = preg_replace('/>[ ]*<li/i', '>
+        //<li', $paginate);
+        $paginate = preg_replace('/class="pagination"/i', 'class="pagination-plain"', $paginate);
+
+        return view('index', compact('articles', 'paginate'));
     }
 
     public function show($id)
@@ -25,7 +36,9 @@ class ArticleController extends Controller
 
     public function create()
     {
-        return view('create');
+        $tags = Tag::lists('name', 'id');
+
+        return view('create', compact('tags'));
     }
 
     public function store()
@@ -36,8 +49,6 @@ class ArticleController extends Controller
     public function test($id)
     {
         //var_dump(Article::find($id));
-        var_dump(Article::where('id', $id)->get()[0]->comments);die;
-        $model = Article::has('comments')->get();
-        dd($model);
+        dd(User::getArticles($id));
     }
 }

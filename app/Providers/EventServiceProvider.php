@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Bee\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\SomeEvent' => [
-            'App\Listeners\EventListener',
+        'Bee\Events\SomeEvent' => [
+            'Bee\Listeners\EventListener',
         ],
     ];
 

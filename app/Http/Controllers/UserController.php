@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Bee\Http\Controllers;
 
-use App\User;
+use Bee\User;
 
-use App\Http\Requests;
+use Bee\Http\Requests;
 use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller

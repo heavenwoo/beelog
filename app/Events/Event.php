@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace Bee\Events;
 
 abstract class Event
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Bee;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -39,6 +39,11 @@ class User extends Model implements AuthenticatableContract,
 
     public function articles()
     {
-        return $this->hasMany('Article', 'user_id', 'id');
+        return $this->hasMany('Bee\Article');
+    }
+
+    public static function getArticles($id)
+    {
+        return self::with('articles.comments')->where('id', $id)->get();
     }
 }

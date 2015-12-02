@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Bee;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -35,7 +35,7 @@ class Comment extends Model
 
     public function article()
     {
-        return $this->belongsTo('App\Article');
+        return $this->belongsTo('Bee\Article');
     }
 
     public static function getCommentsByArticleId($id, $paginate = 10)

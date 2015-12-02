@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Bee;
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
@@ -47,7 +47,7 @@ class Article extends Model
      */
     public function comments()
     {
-        return $this->hasMany('App\Comment');
+        return $this->hasMany('Bee\Comment');
     }
 
     /**
@@ -55,7 +55,7 @@ class Article extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('Bee\User');
     }
 
     /**
@@ -63,7 +63,7 @@ class Article extends Model
      */
     public function tags()
     {
-        return $this->belongsToMany('App\Tag')->withTimestamps();
+        return $this->belongsToMany('Bee\Tag')->withTimestamps();
     }
 
     /**
@@ -71,7 +71,7 @@ class Article extends Model
      */
     public function category()
     {
-        return $this->belongsTo('App\Category');
+        return $this->belongsTo('Bee\Category');
     }
 
     /**
@@ -83,7 +83,7 @@ class Article extends Model
         return static::with('category', 'user', 'tags')
             ->where('published', 'published')
             ->orderBy('created_at', 'desc')
-            ->simplePaginate($paginate);
+            ->paginate($paginate);
     }
 
     /**

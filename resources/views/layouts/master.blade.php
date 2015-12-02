@@ -21,7 +21,7 @@
     <script src="dist/js/vendor/html5shiv.js"></script>
     <script src="dist/js/vendor/respond.min.js"></script>
     <![endif]-->
-
+@yield('link')
     <title>Beelog built with Laravel 5 and Flat UI</title>
 
 </head>
@@ -42,5 +42,6 @@
 {!! HTML::script('dist/js/vendor/video.js') !!}
 {!! HTML::script('dist/js/flat-ui.min.js') !!}
 {!! HTML::script('dist/js/beelog.js') !!}
+@yield('script')
 </body>
 </html>

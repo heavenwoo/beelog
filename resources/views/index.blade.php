@@ -57,12 +57,11 @@
 
     <hr class="featurette-divider">
 @if ($articles->render() != '')
-    <div class="pagination-minimal">
-    {!! $articles->render() !!}
+    <div>
+    {!! $paginate !!}
     </div>
     <hr class="featurette-divider">
 @endif
     <!-- /END THE FEATURETTES -->
-
 </div><!-- /.container -->
 @stop

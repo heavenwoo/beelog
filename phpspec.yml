@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: App
-        psr4_prefix: App
+        namespace: Bee
+        psr4_prefix: Bee
         src_path: app
