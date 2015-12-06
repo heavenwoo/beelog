@@ -26,8 +26,8 @@
 
 </head>
 <body>
+@include('layouts.navbar')
 <div class="container">
-    @include('layouts.navbar')
     @yield('content')
 
     <!-- FOOTER -->

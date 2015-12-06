@@ -39,29 +39,29 @@
     <hr class="featurette-divider">
 
     <div class="row featurette">
-        <div class="col-md-7{{ ($key % 2 == 0) ? ' col-md-push-5' : '' }}">
+        <div class="col-md-3">
+            {!! HTML::image($article->picture_url, $article->subject, ['class' => 'featurette-image img-responsive img-rounded']) !!}
+        </div>
+        <div class="col-md-6">
             <h3 class="featurette-heading"><a href="{{ url('post', $article->id) }}">{{$article->subject}}</a></h3>
                 <span><i class="glyphicon glyphicon-time"></i>{{ $article->created_at->diffForHumans() }}</span>
         @if($article->tags)
             @foreach($article->tags as $tag)
-                <span><i class="glyphicon glyphicon-tag"></i>{{ $tag->name }}</span>
+                <span class="cm-tag"><i class="glyphicon glyphicon-tag"></i><a href="{!! url('tag', $tag->id) !!}">{{ $tag->name }}</a></span>
             @endforeach
         @endif
             <p class="lead">{!! nl2br($article->intro) !!}</p>
-        </div>
-        <div class="col-md-5{{ ($key % 2 == 0) ? ' col-md-pull-7' : '' }}">
-            {!! HTML::image($article->picture_url, $article->subject, ['class' => 'featurette-image img-responsive img-rounded']) !!}
         </div>
     </div>
     @endforeach
 
     <hr class="featurette-divider">
 @if ($articles->render() != '')
-    <div>
+    <div class="text-center">
     {!! $paginate !!}
     </div>
     <hr class="featurette-divider">
 @endif
     <!-- /END THE FEATURETTES -->
-</div><!-- /.container -->
+</div>
 @stop

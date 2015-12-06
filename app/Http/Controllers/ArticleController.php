@@ -46,6 +46,23 @@ class ArticleController extends Controller
         dd(Request::all());
     }
 
+    public function tag($id)
+    {
+        $articles = Article::getArticlesbyTagId($id, config('blog.posts_per_page'));
+
+        //Fix the Flat UI pagination issue.
+        $paginate = $articles->render();
+        //$paginate = preg_replace('/<li(.+?)><span>&laquo;<\/span><\/li>/i', '<li class="previous disabled"><span class="fui-arrow-left"></span></li>', $paginate);
+        //$paginate = preg_replace('/<li><a href="(.+?)"(.+?)>&laquo;<\/a><\/li>/i', '<li class="previous"><a href="$1" class="fui-arrow-left"></a></li>', $paginate);
+        //$paginate = preg_replace('/<li(.+?)><span>&raquo;<\/span><\/li>/i', '<li class="next disabled"><span class="fui-arrow-right"></span></li>', $paginate);
+        //$paginate = preg_replace('/<li><a href="(.+?)"(.+?)>&raquo;<\/a><\/li>/i', '<li class="next"><a href="$1" class="fui-arrow-right"></a></li>', $paginate);
+        //$paginate = preg_replace('/>[ ]*<li/i', '>
+        //<li', $paginate);
+        $paginate = preg_replace('/class="pagination"/i', 'class="pagination-plain"', $paginate);
+
+        return view('tag', compact('articles', 'paginate'));
+    }
+
     public function test($id)
     {
         //var_dump(Article::find($id));

@@ -23,6 +23,8 @@ Route::get('post/create', 'ArticleController@create');
 
 Route::post('post/store', 'ArticleController@store');
 
+Route::get('tag/{id}', 'ArticleController@tag');
+
 Route::get('admin', function()
 {
     return view('admin.login');

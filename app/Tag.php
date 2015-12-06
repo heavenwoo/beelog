@@ -41,4 +41,11 @@ class Tag extends Model
     {
         return static::lists('name', 'id');
     }
+
+    public static function getArticlesByTagId($id, $paginate = 5)
+    {
+        return static::with('articles')
+            ->where('id', $id)
+            ->paginate($paginate);
+    }
 }

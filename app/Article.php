@@ -94,4 +94,13 @@ class Article extends Model
     {
         return static::findOrFail($id)->load('user', 'comments');
     }
+
+    public static function getArticlesbyTagId($id, $paginate = 10)
+    {
+        return Tag::findOrFail($id)->articles()
+            ->with('category', 'user')
+            ->where('published', 'published')
+            ->orderBy('created_at', 'desc')
+            ->paginate($paginate);
+    }
 }
