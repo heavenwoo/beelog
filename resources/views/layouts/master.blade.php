@@ -22,12 +22,6 @@
     <script src="dist/js/vendor/respond.min.js"></script>
     <![endif]-->
 @yield('link')
-    <title>Beelog built with Laravel 5 and Flat UI</title>
-    <style>
-        body {
-            margin-top: 70px;
-        }
-    </style>
 </head>
 <body>
 @include('layouts.navbar')
