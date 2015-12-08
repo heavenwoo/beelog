@@ -5,6 +5,7 @@ namespace Bee\Http\Controllers;
 use Bee\Article;
 use Bee\Tag;
 use Bee\User;
+use GrahamCampbell\Markdown\Facades\Markdown;
 
 use Request;
 
@@ -30,6 +31,7 @@ class ArticleController extends Controller
     public function show($id)
     {
         $article = Article::getArticleById($id);
+        //$article->content = Markdown::convertToHtml($article->content);
 
         return view('post', compact('article'));
     }
@@ -43,6 +45,7 @@ class ArticleController extends Controller
 
     public function store()
     {
+        Markdown::convertToHtml('foo');
         dd(Request::all());
     }
 
